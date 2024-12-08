@@ -16,7 +16,7 @@ The pipeline includes data extraction, transformation, and saving the results as
 
 ## Project Structure
 
-- `src/main/scala/Main.scala`: Main application logic.
+- `src/main/scala/ETL.scala`: Main application logic.
 - Input file: `data/bitcoin-price.csv`
 - Output folder: `output`.
 
