@@ -20,6 +20,7 @@ object ETL {
      * After, matches the result of the pipeline to determine success or failure:
      *  - If the pipeline succeeds, the resulting DataFrame is displayed and saved to the output path.
      *  - If the pipeline fails (returns `None`), a failure message is printed to the console. */
+
     val pipeline = {
       Extractor()
         .flatMap(rawDf =>
@@ -29,8 +30,10 @@ object ETL {
     }
 
     pipeline match {
-      case Some(df: DataFrame) => df.show()
-        Loader(df)
+      case Some(df: DataFrame) =>
+        Loader {
+          df
+        }
       case None => println {
         "Pipeline failed"
       }

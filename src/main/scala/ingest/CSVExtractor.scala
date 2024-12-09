@@ -1,6 +1,8 @@
 package it.mateusdesouza.spark
 package ingest
 
+import config.ConfigLoader
+
 import org.apache.spark.sql.types.StructType
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
@@ -16,7 +18,7 @@ trait CSVExtractor {
    * @param schema    Schema of input data.
    * @return Dataframe extracted. */
   def extract(spark: SparkSession, inputPath: String, schema: StructType): Option[DataFrame] = try {
-    Some(spark.read.option("header", value = true).schema(schema).csv(inputPath))
+    Some(spark.read.option("header", value = true).schema(schema).csv(ConfigLoader.getInputPath))
   } catch {
     case e: Exception => println {
       s"Error reading data: ${e.getMessage}"

@@ -1,6 +1,8 @@
 package it.mateusdesouza.spark
 package load
 
+import config.ConfigLoader
+
 import org.apache.spark.sql.DataFrame
 
 /** Trait for loading and saving data to a CSV file.
@@ -20,7 +22,7 @@ trait CSVLoader {
       df.write.option("sep", ",")
         .option("header", "true")
         .option("escape", "\"")
-        .option("quoteAll", "true").csv(outputPath)
+        .option("quoteAll", "true").csv(ConfigLoader.getOutputPath)
     } catch {
       case e: Exception =>
         println(s"Error saving data: ${e.getMessage}")
