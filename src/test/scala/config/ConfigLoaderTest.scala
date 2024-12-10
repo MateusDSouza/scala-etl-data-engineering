@@ -28,7 +28,7 @@ class ConfigLoaderTest extends AnyFunSpec {
   /**
    * A higher-order function to simplify the testing of configuration values.
    *
-   * @param description A description of the configuration parameter being tested.
+   * @param description   A description of the configuration parameter being tested.
    * @param actualValueFn A function to retrieve the actual value.
    * @param expectedValue The expected value to compare against.
    */
@@ -40,8 +40,7 @@ class ConfigLoaderTest extends AnyFunSpec {
     }
   }
 
-  describe("ConfigLoader") {
-    // Iterate over the expected values and use the higher-order function for testing
+  describe("Test ConfigLoader") {
     expectedValues.foreach { case (description, (actualValueFn, expectedValue)) =>
       testConfigValue(description, actualValueFn, expectedValue)
     }

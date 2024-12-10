@@ -1,5 +1,5 @@
 package it.mateusdesouza.spark
-package ingest
+package extract
 import providers.SchemaProvider.defineSchema
 import providers.SparkSessionProvider.createSparkSession
 

@@ -1,6 +1,6 @@
 package it.mateusdesouza.spark
 
-import ingest.Extractor
+import extract.Extractor
 import load.Loader
 import transform.Transformer
 
