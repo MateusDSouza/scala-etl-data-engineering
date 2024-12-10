@@ -38,5 +38,5 @@ trait ETLConfig {
    * @return A string representing the data output path.
    */
     //TODO: FIX THIS BUG
-  final def getOutputPath: String = config.getString("OutputPath")
+  final def getOutputPath: String = config.getString("outputPath")
 }
