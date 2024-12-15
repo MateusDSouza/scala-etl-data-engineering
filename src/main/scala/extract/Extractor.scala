@@ -30,7 +30,7 @@ object Extractor extends CSVExtractor {
   /**
    * Path to the input CSV file containing Bitcoin price data.
    */
-  val inputPath: String = "data/bitcoin-price.csv"
+  var inputPath: String = "data/bitcoin-price.csv"
 
   final def apply(): Option[DataFrame] = extract(spark = this.spark, inputPath = this.inputPath, schema = this.schema)
 

@@ -1,6 +1,10 @@
 package it.mateusdesouza.spark
 package config
 
+import com.typesafe.config.{Config, ConfigFactory}
+
+import java.io.File
+
 /**
  * An object for consolidating Spark and ETL configuration loading.
  *
@@ -12,4 +16,5 @@ package config
  * @see [[SparkConfig]] for Spark-related configurations.
  * @see [[ETLConfig]] for ETL-related configurations.
  */
+
 object ConfigLoader extends SparkConfig with ETLConfig
